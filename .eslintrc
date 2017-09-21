@@ -1,0 +1,22 @@
+// -*- mode: json -*-
+{
+    "ecmaFeatures": {
+    },
+    "parser": "espree",
+    "env": {
+        "node": true,
+        "es6": true
+    },
+
+    "plugins": [
+    ],
+
+    "extends": "eslint:recommended",
+
+    "rules": {
+        "strict": 2,
+        "no-console":0,
+        "no-eval":2,
+        "semi":2
+    }
+}
