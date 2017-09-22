@@ -1,0 +1,21 @@
+* ~agly~ , an attribute grammar library for javascript
+
+Here's a simple example which reverses the order of operands in each addition.
+#+BEGIN_SRC javascript
+const   agly = require('agly');
+const recast = require('recast');
+const assert = require('chai').assert;
+
+const gr = new agly.Grammar({
+    BinaryExpression: class extends agly.Node {
+        get rewritten() {
+            const p = this._parse;
+            return p.operator==='+' ? b.binaryExpression('+',p.right,p.left) : p;
+        }
+    }
+});
+
+console.log(recast.print(gr.load(recast.parse("function fn(a) {\n  return a + 1;\n}")).rewritten).code);
+#+END_SRC
+
+See tests for (not much) more.
