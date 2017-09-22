@@ -1,7 +1,5 @@
 // -*- mode: json -*-
 {
-    "ecmaFeatures": {
-    },
     "parser": "espree",
     "env": {
         "node": true,
